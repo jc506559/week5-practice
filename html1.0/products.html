@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        div {
+            width: 200px;
+            height: 400px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" style="text-align: center;" value="More message" id="btn"/>
+<div id="dv"></div>
+<script src="products.js"></script>
+<script>
+    var kungfu = ["Black Forest Gateau", "Eggless Truffle", "Coffee Cake with Mocha Frosting", "Mango Meringue Cake"];
+
+    my$("btn").onclick = function () {
+
+        var ulObj = document.createElement("ul");
+        my$("dv").appendChild(ulObj);
+
+        for (var i = 0; i < kungfu.length; i++) {
+            var liObj = document.createElement("li");
+
+            liObj.innerHTML = kungfu[i];
+            ulObj.appendChild(liObj);
+
+            liObj.onmouseover = mouseoverHandle;
+
+            liObj.onmouseout = mouseoutHandle;
+        }
+    };
+
+
+    function mouseoverHandle() {
+        this.style.backgroundColor = "red";
+    }
+    function mouseoutHandle() {
+        this.style.backgroundColor = "";
+    }
+
+
+
+</script>
+</body>
+</html>
